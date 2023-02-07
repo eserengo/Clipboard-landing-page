@@ -1,0 +1,344 @@
+/*
+ Name: Clipboard landing page.
+ Description: A Frontendmentor.io coding challenge.
+ Author: Federico Borzani
+ Author URL:  https://github.com/eserengo/
+*/
+
+/* --- TAGS --- */
+
+:root {
+
+  /* --- FONTS --- */
+
+  font-family: "Bai Jamjuree";
+  font-size: 18px;
+  font-weight: 400;
+  --Bold: 600;
+  text-rendering: optimizeLegibility;
+
+  /* --- COLOR PALETTE --- */
+
+  --Strong-Cyan: hsl(171, 66%, 44%);
+  --Light-Blue: hsl(233, 100%, 69%);
+  --Dark-Grayish-Blue: hsl(210, 10%, 33%);
+  --Grayish-Blue: hsl(201, 11%, 66%);
+  --Light-Grayish-Blue: hsl(202, 25%, 94%);
+}
+
+* {
+  box-sizing: border-box;
+  max-width: 100%;
+  padding: 0%;
+  margin: 0%;
+  user-select: none;
+}
+
+body {
+  min-height: 100vh;
+  min-width: 200px;
+}
+
+ul, li {
+  list-style-type: none;
+}
+
+/* --- GENERAL CLASSES --- */
+
+.hidden {
+  display: none;
+}
+
+.selectable:hover {
+  cursor: pointer;
+  user-select: all;
+}
+
+.rel {
+  position: relative;
+}
+
+.abs {
+  position: absolute;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.center {
+  text-align: center;
+}
+
+.flex-col {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.flex-row {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.flex-row.center,
+.flex-col.center {
+  align-items: center;
+  justify-content: center;
+}
+
+.abs.center {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+/* --- SPECIFIC CLASSES --- */
+
+.title {
+  font-weight: var(--Bold);
+  color: var(--Dark-Grayish-Blue);
+  line-height: 100%;
+}
+
+.primary.title {
+  font-size: 150%;
+}
+
+.secondary.title {
+  font-size: 125%;
+}
+
+.sub.title {
+  font-size: 100%;
+}
+
+.para {
+  color: var(--Grayish-Blue);
+  font-size: 75%;
+}
+
+.button {
+  width: 240px;
+  height: 48px;
+  font-size: 75%;
+  font-weight: var(--Bold);
+  letter-spacing: 1px;
+  color: var(--Light-Grayish-Blue);
+  border-radius: 32px;
+  margin: 16px auto;
+}
+
+.primary.button {
+  background-color: var(--Strong-Cyan);
+  border: 1px solid var(--Strong-Cyan);
+  box-shadow: 1px 1px 2px var(--Strong-Cyan);
+}
+
+.primary.button:hover {
+  color: var(--Strong-Cyan);
+  background-color: transparent;
+}
+
+.secondary.button {
+  background-color: var(--Light-Blue);
+  border: 1px solid var(--Light-Blue);
+  box-shadow: 1px 1px 2px var(--Light-Blue);
+}
+
+.secondary.button:hover {
+  color: var(--Light-Blue);
+  background-color: transparent;
+}
+
+.main-logo {
+  width: 80px;
+  margin-bottom: 20%;
+}
+
+.footer {
+  background-color: var(--Light-Grayish-Blue);
+}
+
+.footer-logo,
+.icon {
+  width: 48px;
+}
+
+.fa {
+  font-size: 32px;
+}
+
+.contact,
+.social {
+  color: var(--Dark-Grayish-Blue);
+}
+
+.contact li:hover,
+.social li:hover {
+  color: var(--Strong-Cyan);
+}
+
+.attribution {
+  font-size: 50%;
+  text-align: center;
+  margin-top: 16px;
+}
+
+/* --- MEDIA QUERIES --- */
+
+@media screen and (width <= 375px) {
+  .main {
+    padding: 25% 5%;
+    background-image: url("./images/bg-header-mobile.png");
+    background-repeat: no-repeat;
+    background-position: top left;
+  }
+  .header {
+    margin-bottom: 33%;
+  }
+  .header .para {
+    margin: 10% 0%;
+  }
+  .section.one .para {
+    margin-top: 5%;
+  }
+  .section.two .sub-section {
+    margin: 15% 0%;
+    gap: 16px;
+  }
+  .section.two .sub-section .para {
+    padding-bottom: 24px;
+  }
+  .section {
+    margin-bottom: 25%;
+  }
+  .section.three .para {
+    margin: 5% 0% 15%;
+  }
+  .section.four .para {
+    margin-top: 5%;
+  }
+  .section.five {
+    gap: 48px;
+  }
+  .section.five div {
+    gap: 24px;
+  }
+  .section.six {
+    gap: 48px;
+  }
+  .brand-logo {
+    width: 75%;
+  }
+  .section.seven .para {
+    margin: 5% 0% 10%;
+  }
+  .footer {
+    padding: 15%;
+  }
+  .contact {
+    margin: 33% 0%;
+  }
+  .contact,
+  .social {
+    gap: 32px;
+  }
+}
+
+@media screen and (width > 375px) {
+  body {
+    min-width: 650px;
+  }
+  .main {
+    background-image: url("./images/bg-header-desktop.png");
+    background-repeat: no-repeat;
+    background-position: 0% 0%;
+    background-size: 100% 10%;
+  }
+  .main-logo {
+    margin: 0% auto 5%;
+  }
+  .header {
+    padding: 10%;
+  }
+  .header .para {
+    margin: 2.5% 0% 5%;
+  }
+  .header .button {
+    margin: 0px 8px;
+  }
+  .section.one {
+    padding: 0% 20% 5%;
+    text-align: center;
+  }
+  .section.two {
+    margin-bottom: 10%;
+  }
+  .computer {
+    width: 50%;
+    margin-left: -24px;
+  }
+  .sub-section {
+    padding: 5% 10%;
+    gap: 16px;
+  }
+  .sub-section .para:not(:last-of-type) {
+    margin-bottom: 16px;
+  }
+  .section.three {
+    padding: 0% 20%;
+    text-align: center;
+  }
+  .section.three .para {
+    margin: 8px auto 48px;
+  }
+  .section.four {
+    text-align: center;
+    margin: 5% auto;
+  }
+  .section.five {
+    padding: 0% 10% 10%;
+    gap: 24px;
+  }
+  .section.five div {
+    gap: 24px;
+  }
+  .section.five div:not(:first-of-type) {
+    margin-top: 8px;
+  }
+  .section.six {
+    padding: 0% 10%;
+    gap: 54px;
+  }
+  .brand-logo {
+    width: 12.5%;
+  }
+  .section.seven {
+    text-align: center;
+    padding: 10% 15%;
+  }
+  .section.seven .para {
+    margin: 2.5% auto;
+  }
+  .section.seven .button {
+    margin: 24px 8px;
+  }
+  .footer {
+    height: 120px;
+    padding: 2.5% 10%;
+    gap: 64px;
+  }
+  .contact,
+  .social {
+    gap: 16px;
+    font-size: 75%;
+  }
+}
